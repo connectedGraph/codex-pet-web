@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Pet SDK Demo</title>
+    <link rel="stylesheet" href="demo.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="intro">
+        <p class="eyebrow">ZERO DEPENDENCY · PURE FRONTEND SDK</p>
+        <h1>Web Pet SDK</h1>
+        <p class="lead">
+          一个可以挂进任意 HTML 页面的精灵宠物。拖动、状态动画、自动行走和样式替换全部由一个 JS 文件提供。
+        </p>
+      </header>
+
+      <section class="lab" aria-label="Web Pet controls">
+        <div class="control-area">
+          <div class="section-title">
+            <span>01</span>
+            <h2>状态</h2>
+          </div>
+          <div class="state-buttons" id="stateButtons">
+            <button data-state="idle" type="button">待机</button>
+            <button data-state="running-right" type="button">向右跑</button>
+            <button data-state="running-left" type="button">向左跑</button>
+            <button data-state="waving" type="button">挥手</button>
+            <button data-state="jumping" type="button">跳跃动画</button>
+            <button data-state="failed" type="button">失败</button>
+            <button data-state="waiting" type="button">等待</button>
+            <button data-state="running" type="button">工作中</button>
+            <button data-state="review" type="button">审查</button>
+          </div>
+
+          <div class="section-title separated">
+            <span>02</span>
+            <h2>运动函数</h2>
+          </div>
+          <div class="action-buttons">
+            <button id="walkLeft" type="button">走到左侧</button>
+            <button id="walkRight" type="button">走到右侧</button>
+            <button id="jumpButton" type="button">原地跳跃</button>
+            <button id="centerButton" type="button">移动到中央</button>
+            <button id="pauseButton" type="button">暂停动画</button>
+            <button id="hideButton" type="button">隐藏宠物</button>
+          </div>
+        </div>
+
+        <aside class="inspector">
+          <div class="section-title">
+            <span>03</span>
+            <h2>运行状态</h2>
+          </div>
+          <dl>
+            <div><dt>全局对象</dt><dd>window.pet</dd></div>
+            <div><dt>状态</dt><dd id="stateValue">idle</dd></div>
+            <div><dt>坐标</dt><dd id="positionValue">0, 0</dd></div>
+            <div><dt>SDK</dt><dd id="versionValue">1.0.0</dd></div>
+          </dl>
+
+          <div class="section-title separated">
+            <span>04</span>
+            <h2>临时换图测试</h2>
+          </div>
+          <p class="hint">选择同规格的 PNG/WebP。刷新页面即可恢复默认素材。</p>
+          <label class="file-input">
+            <span>选择精灵图</span>
+            <input id="spriteInput" type="file" accept="image/png,image/webp" />
+          </label>
+          <label class="size-control">
+            <span>显示宽度</span>
+            <input id="sizeRange" type="range" min="72" max="240" value="128" />
+            <output id="sizeOutput">128px</output>
+          </label>
+        </aside>
+      </section>
+
+      <section class="code-section">
+        <div class="section-title">
+          <span>05</span>
+          <h2>页面接入只需要这些代码</h2>
+        </div>
+        <pre><code>&lt;script src="./web-pet.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  const pet = WebPet.create({
+    spriteSheet: "./assets/codex-spritesheet.webp",
+    initialState: "idle"
+  });
+
+  pet.setState("waving");
+  pet.motion.walkTo(300, 420);
+&lt;/script&gt;</code></pre>
+      </section>
+    </main>
+
+    <script src="web-pet.js"></script>
+    <script src="demo.js"></script>
+  </body>
+</html>
