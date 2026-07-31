@@ -1,4 +1,4 @@
-# Web Pet SDK (猫羽雫 · Shizuku Edition)
+# Codex Web Pet SDK 
 
 [中文](#中文) | [English](#english)
 
@@ -6,7 +6,7 @@
 
 ## 中文
 
-一个无外部依赖、纯前端开发的网页精灵宠物 SDK。
+一个无外部依赖、纯前端开发的 Codex 网页精灵宠物 SDK。你完全可以复用 Codex Pets 的宠物生态来丰富网页悬浮窗的主题，比如 [petdex](https://petdex.dev/)。
 
 不需要 Node.js、npm、React 或复杂的构建工具。只需将 `web-pet.js` 和精灵图放进网页目录，引入一个 `<script>` 标签即可让可动的桌面宠物入驻你的网页，支持拖拽、动作动画、自动行走与自定义换肤。
 
@@ -137,7 +137,7 @@ pet.destroy();
 
 ## English
 
-A dependency-free, pure-frontend Web Sprite Pet SDK.
+A dependency-free, pure-frontend Codex Web Sprite Pet SDK. You can fully reuse the Codex Pets ecosystem to enrich the themes of your web floating widget, such as [petdex](https://petdex.dev/).
 
 No Node.js, npm, React, or complex bundling tools are required. Put `web-pet.js` and the spritesheet into your web folder, include a single `<script>` tag, and render an interactive floating pet on your webpage. Supports dragging, animations, auto-pathing, and skin hot-swaps.
 
